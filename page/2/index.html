@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,600 +152,424 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-字符串类型与基本数据类型的转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="字符串类型与基本数据类型的转换"><a href="#字符串类型与基本数据类型的转换" class="headerlink" title="字符串类型与基本数据类型的转换"></a>字符串类型与基本数据类型的转换</h1><h3 id="基本数据类型转为字符串"><a href="#基本数据类型转为字符串" class="headerlink" title="基本数据类型转为字符串"></a>基本数据类型转为字符串</h3><ol>
-<li><p>加一个空字符串</p>
-<p><code>System.out.println(100 + &quot;&quot;);</code></p>
-</li>
-<li><p>使用包装类的toString(参数列表)方法</p>
-<blockquote>
-<p>不同于Object类的toString()空参方法，重载关系</p>
-<p>String s2 = Integer.toString(100);</p>
+        <h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><h3 id="什么是多态（Polymorphism-multi）"><a href="#什么是多态（Polymorphism-multi）" class="headerlink" title="什么是多态（Polymorphism/multi）"></a>什么是多态（Polymorphism/multi）</h3><blockquote>
+<p>多态是指对象的多态性，继承是多态的前提，子类对象既是子类类型也可以是父类类型，父类类型指向子类对象</p>
+<p>例如：猫是动物的子类 ，猫可以看作是动物类型</p>
 </blockquote>
-</li>
-<li><p>使用String类的valueOf()方法（静态 直接使用类名调用）</p>
-<blockquote>
-<p>String s1 = String.valueOf(参数);</p>
+<h3 id="多态格式"><a href="#多态格式" class="headerlink" title="多态格式"></a>多态格式</h3><blockquote>
+<p>父类名 对象名 = new 子类名();</p>
 </blockquote>
-</li>
-</ol>
-<h3 id="字符串转为基本数据类型"><a href="#字符串转为基本数据类型" class="headerlink" title="字符串转为基本数据类型"></a>字符串转为基本数据类型</h3><p>使用包装类的静态方法    parseXXX(“数值类型字符串”)：</p>
-<ol>
-<li>Integer：static int parseInt(String s)</li>
-<li>Double：static double parseDouble(String s)</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-异常" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><ul>
-<li>根类 java.lang.Throwable    </li>
-<li>异常是一个类  在产生异常时创建一个异常对象  交给JVM   JVM一般采取中断程序  打印异常的方式</li>
-<li>java.lang.Throwable有两个子类<ul>
-<li>java.lang.Error：error是程序很严重的错误   必须修改代码才能继续执行</li>
-<li>java.lang.Exception：编译器异常  Exception是程序产生的很小的错误<ul>
-<li>java.lang.RuntimeException extends Exception：程序运行期错误  </li>
-<li>Exception通常有两个处理方式<ul>
-<li>一种是抛出异常  产生Exception后 后续代码无法执行  </li>
-<li>一种是try catch  产生Exception后  后续代码可以执行</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="异常处理方式"><a href="#异常处理方式" class="headerlink" title="异常处理方式"></a>异常处理方式</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210825221026168.png" alt="image-20210825221026168"></p>
-<h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><ul>
-<li><p>由于系统自带的异常可能不够我们使用 这时就需要自己定义异常来使用</p>
-</li>
-<li><p>要么继承Exception 编译期异常 要么继承RuntimeException运行期异常</p>
-</li>
-<li><p>其中内容：</p>
-<ul>
-<li>无参构造（默认其中含有super() 调用父类的无参构造）</li>
-<li>带异常信息的构造方法（其中使用super(string) 调用父类带错误信息的构造）</li>
-</ul>
-<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210826170032427.png" alt="image-20210826170032427"></p>
-</li>
-<li><p>在实际使用：</p>
-</li>
-</ul>
-<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210826170232431.png" alt="image-20210826170232431"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E5%BC%82%E5%B8%B8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-一个数组的内存图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一个数组的内存图"><a href="#一个数组的内存图" class="headerlink" title="一个数组的内存图"></a>一个数组的内存图</h1><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210805215600366.png" alt="image-20210805215600366"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-权限修饰符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h1><h3 id="public-gt-protected-gt-default-gt-private"><a href="#public-gt-protected-gt-default-gt-private" class="headerlink" title="public    &gt;     protected    &gt;    (default)    &gt;    private"></a>public    &gt;     protected    &gt;    (default)    &gt;    private</h3><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">public</th>
-<th align="center">protected</th>
-<th align="center">(default)</th>
-<th align="center">private</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">同一个类</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-</tr>
-<tr>
-<td align="center">同一个包</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td align="center">不同包的子类</td>
-<td align="center">Yes</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-<tr>
-<td align="center">不同包非子类</td>
-<td align="center">Yes</td>
-<td align="center">No</td>
-<td align="center">No</td>
-<td align="center">No</td>
-</tr>
-</tbody></table>
-<h3 id="Notice："><a href="#Notice：" class="headerlink" title="Notice："></a>Notice：</h3><p>(default)并不是default关键字    而是根本不写</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-内部类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
-<p>定义在类内部的类</p>
+<h5 id="当调用子类方法时"><a href="#当调用子类方法时" class="headerlink" title="当调用子类方法时"></a>当调用子类方法时</h5><blockquote>
+<p>Fu obj = new Zi();</p>
+<p>obj.method();    // 这里调用子类重写的父类方法    成员方法：编译看左边 运行看右边（子类重写父类的方法 —-》 同名）</p>
+<p>System.out.println(obj.name);    // Fu     成员变量：编译看左边 运行也看左边</p>
+<p>obj.methodZi();    // 错误    调用方法编译看左边 运行看右边</p>
 </blockquote>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
-<li><p>成员内部类</p>
-<p>成员内部类定义在方法外，类当中</p>
-<p>格式：    修饰符    class    外部类名{</p>
-<p>​                    修饰符    class    内部类名{</p>
-<p>​                        // 内部类内容</p>
-<p>}</p>
-<p>​            // 外部类内容</p>
-<p>}</p>
-<p>使用：    外部类.内部类 对象名 = new 外部类().new 内部类();</p>
-<p>// 初始化一个内部类对象</p>
-</li>
-<li><p>局部内部类</p>
-<p>局部内部类定义在方法内</p>
-<p>格式：    修饰符    class    外部类名{</p>
-<p>​            修饰符 返回值类型    方法名（参数列表）{</p>
-<p>​                class 局部内部类名{</p>
-<p>​                // 局部内部类内容</p>
-<p>}</p>
-<p>}</p>
-<p>}</p>
-<p>使用局部内部类只能通过 外部类调用</p>
-</li>
-<li><p>匿名内部类</p>
-<p>匿名内部类属于局部内部类的一种</p>
-<p>eg:    public class ClassA{</p>
-<p>​        public static void main(String[] args){</p>
-<p>​        Student student = new Student();</p>
-<p>​        student.methodStudy();</p>
-<p>​        </p>
-<p>​        // 匿名内部类    用于父子继承关系或者 接口实现类的实现关系</p>
-<p>​        Study study = new Study(){</p>
-<p>​            @Override</p>
-<p>​            public void methodSudy(){</p>
-<p>​                System.out.println(“学习了”);</p>
-<p>​            }</p>
-<p>​    };</p>
-<p>​        study.methodSudy();</p>
-<p>​    }</p>
-<p>}</p>
-</li>
-</ol>
-<hr>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><blockquote>
-<p>public &gt; protected &gt; (default) &gt; private</p>
-</blockquote>
-<p>关于类的修饰符</p>
-<ol>
-<li><p>外部类：public    (default)</p>
-<p>public：全部包</p>
-<p>(default)：本包</p>
-<p>由于外部类最上层为包    所以要么开放包要么封闭包    所以为Public 和 (default)</p>
-<blockquote>
-<p>关于为什么没有 protected 的问题</p>
-<p>由于protected权限最高是不同包的子类    所以需要有继承关系</p>
-<p>而外部类如果不是public    其它包是访问不到的    无法发生继承    也就没有必要使用protected</p>
-</blockquote>
-</li>
-<li><p>成员内部类</p>
-<p>public：全部包</p>
-<p>protected：不同包的子类</p>
-<p>(default)：同一包</p>
-<p>private：本类</p>
-</li>
-<li><p>局部内部类</p>
-<p>没有权限修饰符</p>
-<hr>
-<h3 id="Notice："><a href="#Notice：" class="headerlink" title="Notice："></a>Notice：</h3><blockquote>
-<p>内用外 随意访问</p>
-<p>外用内 需要借助内部类对象</p>
-</blockquote>
-<h5 id="关于局部内部类"><a href="#关于局部内部类" class="headerlink" title="关于局部内部类"></a>关于局部内部类</h5><p>​    public class Outer{</p>
-<p>​        int num = 30;</p>
-<p>​        public class Inner{</p>
-<p>​                int num = 20;</p>
-<p>​                void methodInner(){</p>
-<p>​                int num = 10;</p>
-<p>​                System.out.println(num);    // 10    访问的是局部内部类方法的局部对象</p>
-<p>​                System.out.println(this.num);    // 20    访问的是外部类方法的局部变量</p>
-<p>​                // 关于这里访问外部类局部变量    由于局部变量在栈中存储    内部类在堆中存储</p>
-<p>​                // 生命周期不同—》要求外部类局部变量值不可改变    这样就算出栈了对于内部类使用的copy值也不会发生影响</p>
-<p>​                // 所以要么外部类局部变狼值只赋予唯一一次    要么声明为final</p>
-<p>​                System.out.println(Outer.this.num);    // 30    访问的是外部类的成员变量</p>
-<p>​            }</p>
-<p>​        }</p>
-<p> }</p>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E5%86%85%E9%83%A8%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h3 id="什么是接口"><a href="#什么是接口" class="headerlink" title="什么是接口"></a>什么是接口</h3><blockquote>
-<p>接口就是一种公共的规范标准 （只要符合标准就可以公用）多个类的公共规范</p>
-<p>接口时引用数据类型</p>
-</blockquote>
-<h3 id="Notice："><a href="#Notice：" class="headerlink" title="Notice："></a>Notice：</h3><blockquote>
-<p>接口关键字换为interface    虽然不是.class 但是编译过程 也是由 .java ——&gt; .class (javac)</p>
-</blockquote>
-<h3 id="接口的内容"><a href="#接口的内容" class="headerlink" title="接口的内容"></a>接口的内容</h3><ol>
-<li><p>常量（java7 以后）</p>
-<p>此处常量不是标准常量而是不可改变的变量</p>
-<p>格式： [public] [static] [final] 数据类型 常量名 = 常量值；</p>
-<p>public 项目下所有类都可以访问</p>
-<p>static  静态修饰符    属于类的</p>
-<p>final    不可改变的</p>
-</li>
-<li><p>抽象方法（java7 以后）</p>
-<p>抽象方法的两个固定修饰符 [public] [abstract] 可以选择性地省略</p>
-<p>格式： [pulbic] [abstract] 返回值类型 方法名（参数列表）； </p>
-</li>
-<li><p>默认方法（java8 以后）</p>
-<p>默认方法用于解决接口升级问题，例如一个接口有多个实现类，如果接口增加一个方法（抽象），那么所有实现类都要变动。</p>
-<p>此时将要增加的方法改为默认方法，那么实现类不需要为此改动。</p>
-<p>格式：    [public] default 返回值类型 方法名(参数列表){ 方法体；}</p>
-<p>其中public 可以省略 default不可以省略</p>
-</li>
-<li><p>静态方法（java8 以后）</p>
-<p>静态方法是属于类的，通过接口名.静态方法名() 直接调用</p>
-<p>格式：    [public] [static] 返回值类型 方法名（参数列表）{ 方法体；}</p>
-<p>Notice：接口的静态方法不可以通过接口实现类对象调用</p>
-</li>
-<li><p>私有方法（java9 以后）</p>
-<p>私有方法分为    普通私有方法    和    静态私有方法</p>
-<p>其中普通私有方法是为了解决同一个接口内不同默认方法重复代码问题</p>
-<p>静态私有方法是为了解决同一个接口内不同静态方法重复代码问题</p>
-<p>格式：private 返回值类型 方法名（参数列表）{</p>
-<p>​    // 不同默认方法的重复代码</p>
-<p>}</p>
-<p>private static 返回值类型 方法名（参数列表）{</p>
-<p>​    // 不同静态方法的重复代码</p>
-<p>}</p>
-<h3 id="接口内容的Notice："><a href="#接口内容的Notice：" class="headerlink" title="接口内容的Notice："></a>接口内容的Notice：</h3><ol>
-<li>接口中不可以有 静态代码块 和 构造方法</li>
-<li>一个类的直接父类是唯一的，但是一个类可以同时实现多个接口（类的单继承和多实现）</li>
-<li>如果实现类所实现的多个接口中，存在重复的抽象方法，只需要覆写一次</li>
-<li>如果实现类没有重写所有接口的抽象方法，那么该实现类必须设置为抽象类</li>
-<li>如果实现类实现的多个接口中，存在重复的默认方法，那么实现类一定要对冲突的默认方法进行重写（抽象类也要重写）</li>
-<li>一个类如果直接父类中方法和接口中默认方法，产生了冲突，优先用父类中的方法（继承优先于实现）</li>
-</ol>
-<hr>
-<h3 id="Notice：-1"><a href="#Notice：-1" class="headerlink" title="Notice："></a>Notice：</h3><ol>
-<li>类与类之间是单继承的</li>
-<li>类与接口是多实现的</li>
-<li>接口与接口是多继承的</li>
-</ol>
-<h3 id="方法冲突问题"><a href="#方法冲突问题" class="headerlink" title="方法冲突问题"></a>方法冲突问题</h3><ol>
-<li>多个父接口的抽象方法冲突 没关系 没有方法体</li>
-<li>多个父接口的默认方法重复 要在子接口进行默认方法的重写而且要带着default关键字</li>
-</ol>
-</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
-<p>继承是多态的前提，主要解决共性抽取（重复代码）</p>
-</blockquote>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li>子类可以拥有父类的“内容”</li>
-<li>子类可以拥有自己独有的“内容”</li>
-</ol>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p><code>public class Fu&#123;&#125;</code></p>
-<p><code>public class Zi extends Fu&#123;&#125;</code></p>
-<p>在父子类继承关系中，如果成员变量重名，则创建对象时，访问有两种：</p>
-<ol>
-<li>直接方式 通过子类对象访问成员变量（等号左边是谁 就优先用谁 没有则向上找）</li>
-<li>间接方式 通过成员方法访问成员变量 方法属于谁 就优先用谁 没有再向上找</li>
-</ol>
-<hr>
-<h3 id="三种变量重名问题"><a href="#三种变量重名问题" class="headerlink" title="三种变量重名问题"></a>三种变量重名问题</h3><ol>
-<li>局部变量： 直接写</li>
-<li>本类成员变量： this.成员变量</li>
-<li>父类成员变量： super.成员变量</li>
-</ol>
-<h3 id="继承关系中成员变量的访问顺序"><a href="#继承关系中成员变量的访问顺序" class="headerlink" title="继承关系中成员变量的访问顺序"></a>继承关系中成员变量的访问顺序</h3><p>​    在父子类继承关系中，创建子类对象，访问成员方法规则：    创建的对象是谁 就优先用谁如果没有就向上找</p>
-<hr>
-<h3 id="重写与重载的区别"><a href="#重写与重载的区别" class="headerlink" title="重写与重载的区别"></a>重写与重载的区别</h3><p>重写（Override）：重写发生在父子类继承关系中，同方法名同参数列表</p>
-<p>重载（Overload）：重写发生在同类中，同方法名 不同参数列表</p>
-<p>Notice（Override）:</p>
-<pre><code>1. 必须保证父子类间方法名相同，参数列表页相同
- 2. 子类方法的返回值范围要小于等于父类返回值范围
- 3. 子类的修饰权限要大于等于父类的修饰权限范围
+<h5 id="成员变量Notice"><a href="#成员变量Notice" class="headerlink" title="成员变量Notice:"></a>成员变量Notice:</h5><pre><code>1. 直接访问：通过 对象名 . 成员变量 看符号左边是谁 优先用谁 没有向上找
+ 2. 间接访问：通过成员方法调用 该方法属于谁优先用谁 没有向上找  
 </code></pre>
+<h3 id="多态好处"><a href="#多态好处" class="headerlink" title="多态好处"></a>多态好处</h3><blockquote>
+<p>无论右边new的时候对象换成那个子类对象，等号左边使用的方法不会发生变化    代码更加灵活</p>
+</blockquote>
+<h3 id="对象的向上转型"><a href="#对象的向上转型" class="headerlink" title="对象的向上转型"></a>对象的向上转型</h3><p>​    对象的向上转型就是多态本身，即    父类名 对象名 = new 子类();    创建一个子类对象，把它当做父类看待使用 </p>
+<p>​    弊端：一旦向上转型对象就无法使用子类特有方法    这里就需要进行向下转型</p>
+<h3 id="对象的向下转型"><a href="#对象的向下转型" class="headerlink" title="对象的向下转型"></a>对象的向下转型</h3><blockquote>
+<p>用于解决多态的对象无法使用子类特有方法 ———–》 还原</p>
+<p>还原：把对象类型还原成原本的子类类型</p>
+</blockquote>
+<p>使用步骤：</p>
+<ol>
+<li>第一步要先判断是不是要转型的子类类型，这里就要使用 instanceof    eg：animal instanceof Cat —–&gt; true/false</li>
+<li>在判断为true后向下转型  格式：子类类型 对象名 = (子类类型) 多态对象名；</li>
+</ol>
+<p>举例：</p>
+<p><code> Animal animal = new Cat();</code> </p>
+<p><code> if(animal instanceof Cat)&#123;</code> </p>
+<p><code>Cat cat = (Cat) animal;&#125;</code></p>
+<h3 id="多态通常使用场景"><a href="#多态通常使用场景" class="headerlink" title="多态通常使用场景"></a>多态通常使用场景</h3><p>多个实现类实现了某个接口，在写某个方法时不能确定是某个实现类 此时可以写接口类型</p>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210816201748767.png" alt="image-20210816201748767"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/%E5%A4%9A%E6%80%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-抽象类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><blockquote>
+<p>如果父类方法不确定如何进行{}方法体的实现，那么这就应该是一个抽象方法</p>
+</blockquote>
+<h3 id="Notice："><a href="#Notice：" class="headerlink" title="Notice："></a>Notice：</h3><blockquote>
+<ol>
+<li>抽象方法所在的类必须是抽象类</li>
+<li>抽象类：在class前写上abstract即可</li>
+<li>抽象类里可以放普通的成员方法</li>
+</ol>
+</blockquote>
+<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><pre><code>1. 不能直接创建抽象类对象（成员方法没有方法体没有意义）
+ 2. 必须用一个子类继承抽象类
+ 3. 子类必须重写实现父类的所有抽象方法
+ 4. 创建子类对象进行实现
+</code></pre>
+<h3 id="Abstract-Class-Notice："><a href="#Abstract-Class-Notice：" class="headerlink" title="Abstract Class Notice："></a>Abstract Class Notice：</h3><ol>
+<li><p>抽象类不能直接创建对象 如果创建 编译javac报错</p>
+</li>
+<li><p>抽象类中可以有构造方法 是供子类创建对象时 初始化父类成员时使用的</p>
+</li>
+<li><p>抽象类中，不一定包含抽象方法 但是有抽象方法的类必须是抽象类</p>
+</li>
+<li><p>抽象类的子类 必须重写抽象父类的所有抽象方法 除非子类也是抽象类</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/%E6%8A%BD%E8%B1%A1%E7%B1%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-常用的API Static静态方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常用的API-Static静态方法"><a href="#常用的API-Static静态方法" class="headerlink" title="常用的API Static静态方法"></a>常用的API Static静态方法</h1><h3 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h3><p>java.util.Arrays(别忘了写s)</p>
+<ol>
+<li>public static String toString(数组)：数组的默认格式输出</li>
+<li>public static void sort(数组)：数组的排序，默认升序</li>
+</ol>
+<hr>
+<h3 id="数学API-Math"><a href="#数学API-Math" class="headerlink" title="数学API Math"></a>数学API Math</h3><p>java.util.Math</p>
+<ol>
+<li><p>public static double abs(double num)：获取绝对值 absolute</p>
+</li>
+<li><p>public static double ceil(double num)：向上取整</p>
+</li>
+<li><p>public static double floor(double num)：向下取整</p>
+</li>
+<li><p>public static longround(double num)：四舍五入</p>
+</li>
+<li><p>Math.PI 圆周率常量</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/%E5%B8%B8%E7%94%A8%E7%9A%84API%20Static%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-包装类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><h3 id="什么是包装类"><a href="#什么是包装类" class="headerlink" title="什么是包装类"></a>什么是包装类</h3><blockquote>
+<p>包装类是将基本数据类型封装为类的一种工具类</p>
+</blockquote>
+<h3 id="包装类能干嘛"><a href="#包装类能干嘛" class="headerlink" title="包装类能干嘛"></a>包装类能干嘛</h3><blockquote>
+<p>包装类内涵很多方法，用于操作基本类型数据</p>
+</blockquote>
+<h3 id="包装类对应"><a href="#包装类对应" class="headerlink" title="包装类对应"></a>包装类对应</h3><ol>
+<li>byte(1)        Byte</li>
+<li>short(2)      Short</li>
+<li>int(4)          Integer</li>
+<li>long(8)       Long</li>
+<li>float(4)       Float</li>
+<li>double(8)   Double</li>
+<li>char(2)      Character</li>
+<li>boolean(1)  Boolean</li>
+</ol>
+<h3 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h3><ol>
+<li>装箱：将基本数据类型转换为包装类</li>
+<li>拆箱：取出包装类值转为基本类型数据</li>
+</ol>
+<hr>
+<h1 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h1><h3 id="包装类的构造方法"><a href="#包装类的构造方法" class="headerlink" title="包装类的构造方法"></a>包装类的构造方法</h3><ol>
+<li><p>public Integer(int value)：初始化数值为value的Integer对象</p>
+</li>
+<li><p>public Integer(String s)：初始化字符串内代表的数值 的 Integer对象</p>
 <blockquote>
-<p>public &gt; protected &gt; (default) &gt; private</p>
-<p>(default)不是关键字default 而是什么都不写 留空</p>
+<p>例：Integer in1 = new Integer(“123”);</p>
 </blockquote>
-<hr>
-<h3 id="继承中的构造方法"><a href="#继承中的构造方法" class="headerlink" title="继承中的构造方法"></a>继承中的构造方法</h3><ol>
-<li>子类构造方法中有一个super（）调用 生都不写系统默认赠送一个</li>
-<li>可以通过子类构造调用父类重载构造</li>
-<li>super的父类构造调用必须是子类构造的第一个语句（first statement）</li>
-<li>子类必须调用父类构造方法 不写就赠送super(); 写了就用指定的super(); super只能有一个 海西叙事第一个</li>
+</li>
 </ol>
-<hr>
-<h3 id="super的三种用法"><a href="#super的三种用法" class="headerlink" title="super的三种用法"></a>super的三种用法</h3><ol>
-<li>super在子类的成员方法中 访问父类的成员变量</li>
-<li>super在子类的成员方法中 访问父类的成员方法</li>
-<li>super在子类的构造方法中 访问父类的构造方法</li>
-</ol>
-<h3 id="this的三种用法"><a href="#this的三种用法" class="headerlink" title="this的三种用法"></a>this的三种用法</h3><ol>
-<li>在本类成员方法中，访问本类的成员变量</li>
-<li>在本类的成员方法中，访问本类的成员方法</li>
-<li>在本类的构造方法中，方法本类另一个构造方法</li>
-</ol>
-<hr>
-<h3 id="Java继承的三个特性"><a href="#Java继承的三个特性" class="headerlink" title="Java继承的三个特性"></a>Java继承的三个特性</h3><ol>
-<li>Java语言是单继承的，一个类的直接父类唯一</li>
-<li>Java可以多级继承</li>
-<li>一个子类的父类唯一，但是一个父类可以有多个子类</li>
-</ol>
-<p>Notice：</p>
+<h3 id="包装类的静态方法"><a href="#包装类的静态方法" class="headerlink" title="包装类的静态方法"></a>包装类的静态方法</h3><ol>
+<li><p>public Integer valueOf(int value)：使用包装类内含的静态方法将初始化一个指定数值的实例</p>
+</li>
+<li><p>public Integer valueOf(String s)：初始化一个字符串代表的数值的实例</p>
 <blockquote>
-<p>java.lang.Object是所有类的最高父类</p>
+<p>Integer in2 = Integer.valueOf(“555”);</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h1><h3 id="包装类的成员方法"><a href="#包装类的成员方法" class="headerlink" title="包装类的成员方法"></a>包装类的成员方法</h3><ol>
+<li><p>public int intValue()：将包装类对象转换为基本类型数据</p>
+<blockquote>
+<p>int i = in2.intValue();</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="自动装箱与自动拆箱"><a href="#自动装箱与自动拆箱" class="headerlink" title="自动装箱与自动拆箱"></a>自动装箱与自动拆箱</h1><h3 id="自动装箱"><a href="#自动装箱" class="headerlink" title="自动装箱"></a>自动装箱</h3><p>包装类与基本类型数据可以自动地进行转换</p>
+<blockquote>
+<p>JDK 1.5 以后出现的新特性</p>
+</blockquote>
+<p><code>Integer in3 = 1;</code></p>
+<blockquote>
+<p>自动装箱：将基本类型封装为包装类    相当于    Interger in3 = Integer.valuOf(1) / new Integer(1);</p>
+</blockquote>
+<h3 id="自动拆箱"><a href="#自动拆箱" class="headerlink" title="自动拆箱"></a>自动拆箱</h3><p><code>int i = in3 + 2；</code></p>
+<blockquote>
+<p>自动拆箱，由于包装类无法参与基本类型运算，所以自动拆箱为基本类型参与了运算</p>
+</blockquote>
+<p><code>in3 = in3 + 3;</code></p>
+<blockquote>
+<p>先自动拆箱    后自动装箱</p>
+</blockquote>
+<p><code>ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</code></p>
+<p><code>list.add(1);</code>    // 自动装箱    泛型为Integer 传入参数为基本数据类型</p>
+<p><code>int i = list.get(0);</code>    // 自动拆箱    取出数据为Integer    赋值给基本数据类型</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/%E5%8C%85%E8%A3%85%E7%B1%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Studey Plan" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Studey-Plan"><a href="#Studey-Plan" class="headerlink" title="Studey Plan"></a>Studey Plan</h1><h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><h3 id="html-css-js"><a href="#html-css-js" class="headerlink" title="html css js"></a>html css js</h3><h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><h3 id="ajax-jquery"><a href="#ajax-jquery" class="headerlink" title="ajax jquery"></a>ajax jquery</h3><h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/Studey%20Plan/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-StringBuilder类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h1><blockquote>
+<p>StringBuilder类是字符串缓冲区，可以理解为可变长度的字符串</p>
+<p>由于字符串长度和值不可改变所以占用空间大并且效率低下</p>
+</blockquote>
+<p><code>String str = &quot;a&quot; + &quot;b&quot; + &quot;c&quot;;</code></p>
+<blockquote>
+<p>这里先有”a” “b” “c”三个字符串</p>
+<p>先拼接成”ab”这个新字符串</p>
+<p>最后拼接成”abc” 字符串 一个出现了5个字符串</p>
+</blockquote>
+<ol>
+<li>java.lang.StringBulider</li>
+<li>String类底层是final修饰的byte[] 字节数组  而StringBuilder没有final修饰所以可变</li>
+</ol>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
+<li><p>public StringBulider()：无参构造</p>
+<p>默认值为null</p>
+</li>
+<li><p>public StrnigBuilder(String str)：有参构造</p>
+<p>初始化为传递的指定字符串</p>
+</li>
+</ol>
+<h3 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h3><ol>
+<li><p>public StringBulider append(任意类型参数)</p>
+<p>传递任何类型参数转为字符串形式加入到StringBuilder对象中，并且返回本身</p>
+</li>
+<li><p>public String toString()：</p>
+<p>将StringBuilder类型转为String类型</p>
+</li>
+</ol>
+<blockquote>
+<p>String ———》StringBuilder    通过pulbicStringBulider (String str)</p>
+<p>StringBulider ——》String    通过StringBUilder成员方法 toString()</p>
 </blockquote>
 
       
@@ -759,7 +583,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E7%BB%A7%E6%89%BF/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/28/StringBuilder%E7%B1%BB/">展开全文 >></a>
         </p>
       
 
@@ -789,17 +613,67 @@
 
 
   
-    <article id="post-方法的调用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-String 字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、方法的调用"><a href="#一、方法的调用" class="headerlink" title="一、方法的调用"></a>一、方法的调用</h2><ol>
-<li>方法的使用过程</li>
-<li>图例</li>
+        <h1 id="String-字符串的常用方法"><a href="#String-字符串的常用方法" class="headerlink" title="String 字符串的常用方法"></a>String 字符串的常用方法</h1><h3 id="String-构造方法"><a href="#String-构造方法" class="headerlink" title="String 构造方法"></a>String 构造方法</h3><ol>
+<li><p>无参构造</p>
+<p>public String()</p>
+</li>
+<li><p>字符数组作为参数的构造</p>
+<p>public String(char[] charArray)</p>
+</li>
+<li><p>字节数组作为参数的构造</p>
+<p>public String(byte[] byteArray)</p>
+</li>
+<li><p>直接赋值</p>
+<p>String str = “abc”;</p>
+</li>
 </ol>
-<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210804144250651.png" alt="image-20210804144250651"></p>
-<h2 id="二、有无返回值"><a href="#二、有无返回值" class="headerlink" title="二、有无返回值"></a>二、有无返回值</h2><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210804145854560.png" alt="image-20210804145854560"></p>
+<hr>
+<h3 id="String常用成员方法"><a href="#String常用成员方法" class="headerlink" title="String常用成员方法"></a>String常用成员方法</h3><ol>
+<li><p>比较方法</p>
+<p>public boolean equals(String str)    比较内容</p>
+<p>public boolean equalsIgnoreCase(String str)    不区分大小写比较内容</p>
+</li>
+<li><p>获取方法</p>
+<p>public int length()    获取字符串长度</p>
+<p>public String concat(String str)    拼接字符串后的新字符串作为返回值</p>
+<p>public char charAt(int index)    将参数的索引值所在的字符元素作为返回值</p>
+<p>public int indexOf(String str)    将参数字符串在本字符串第一次出现的索引值作为返回值</p>
+</li>
+<li><p>截取方法</p>
+<p>public String substring(int index)    从index到字符串末尾的子串作为新字符串返回</p>
+<p>public String substring(int begin,int end)    从begin到end的中间子串作为返回值    [begin,end)</p>
+</li>
+<li><p>转换方法</p>
+<p>public char[] toCharArray()    将字符串转换为字符数组</p>
+<p>public byte[] getBytes()    字符串底层由字节数组实现    将底层的字节数组作为返回值</p>
+<p>public String replace(CharSequence oldString,CharSequence newString)    将字符串中的oldString替换成newString，结果的新字符串作为返回值</p>
+</li>
+<li><p>切割方法</p>
+<p>public String[] split(String regex)    将参数字符串作为切割标准进行切割，切成几段字符串形成字符串数组    </p>
+<p>Notice：regex原理是正则表达式 在使用”.“(英文句点)时会失灵，此时使用”\ \ .“</p>
+<p>eg：</p>
+<p><code>String str = &quot;aaa bbb ccc&quot;;</code></p>
+<p><code>String[] strings = str.split(&quot; &quot;);</code></p>
+<p><code>for(int i=0,i &lt; strings.length,i++)&#123;</code></p>
+<p><code>System.out.println(i + &quot;: &quot; + strings[i])&#125;</code></p>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210811010804980.png" alt="image-20210811010804980"></p>
+<p>​    </p>
+</li>
+</ol>
+<hr>
+<h3 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h3><ol>
+<li><p>对于引用类型来说， == 比较的是地址值</p>
+</li>
+<li><p>双引号直接写的字符串存储在字符串常量池（Heap 堆）中，在字符串常量池中存储的字符串对象，字符串对象中存储的是字节数组的地址值</p>
+<p>new 出来的字符串对象会在Heap中单独开辟一个字符串对象，其中存储的也是字节数组的地址值</p>
+</li>
+</ol>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210811010909956.png" alt="image-20210811010909956"></p>
 
       
 
@@ -812,7 +686,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/28/String%20%E5%AD%97%E7%AC%A6%E4%B8%B2/">展开全文 >></a>
         </p>
       
 
@@ -842,66 +716,54 @@
 
 
   
-    <article id="post-泛型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h3 id="什么是泛型"><a href="#什么是泛型" class="headerlink" title="什么是泛型"></a>什么是泛型</h3><p>泛型：可以看作一种未知的数据类型，在我们不知道使用什么数据类型时可以使用泛型</p>
-<h3 id="为什么用泛型"><a href="#为什么用泛型" class="headerlink" title="为什么用泛型"></a>为什么用泛型</h3><blockquote>
-<p>不通过泛型 就只能使用默认的Object类    但是使用Object类无法使用集合元素本身的特有方法</p>
+        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h3 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h3><ol>
+<li><p>下载Spring5</p>
+</li>
+<li><p>导入jar包</p>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827001107655.png" alt="image-20210827001107655"></p>
+</li>
+<li><p>所需Jar包</p>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210826234748947.png" alt="image-20210826234748947"></p>
+</li>
+</ol>
+<h3 id="Spring各个模块"><a href="#Spring各个模块" class="headerlink" title="Spring各个模块"></a>Spring各个模块</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210826234248212.png" alt="image-20210826234248212"></p>
+<hr>
+<h3 id="IoC思想"><a href="#IoC思想" class="headerlink" title="IoC思想"></a>IoC思想</h3><ul>
+<li><p>Ioc 控制反转  （Inversion of Control）面向对象编程的一种设计原则，主要目的是为了降低耦合度</p>
+</li>
+<li><p>Ioc核心思想就是依赖工厂模式建立的</p>
+<p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827170553560.png" alt="image-20210827170553560"></p>
+</li>
+<li><p>Ioc容器底层原理：</p>
+<ol>
+<li><p>xml解析</p>
+</li>
+<li><p>简单对象工厂</p>
+</li>
+<li><p>反射</p>
+<blockquote>
+<p>通过xml解析 出类的全路径 然后使用反射技术创建对象</p>
 </blockquote>
-<p><code>ArrayList list1 = new ArrayList(); // 默认Object</code></p>
-<p><code>list1.add(&quot;abc&quot;);</code></p>
-<p><code>list1.add(1);</code></p>
-<p><code>Iterator it = list1.iterator();</code></p>
-<p><code>while(it.hasNext())&#123;</code></p>
-<p><code>Object obj = it.next();</code></p>
-<p><code>System.out.println(obj);</code></p>
-<p><code>String s = (String) obj;</code></p>
-<p><code>System.out.println(s);        // java.lang.ClassCastException</code></p>
-<p><code>&#125;</code> </p>
-<p>可以更改为：</p>
-<p><code>ArrayList&lt;String&gt; list2 = new ArrayList&lt;&gt;();</code></p>
-<h3 id="泛型好处和坏处"><a href="#泛型好处和坏处" class="headerlink" title="泛型好处和坏处"></a>泛型好处和坏处</h3><ul>
-<li><p>好处：避免数据类型转换的错误，存储的什么数据就取出什么类型的数据</p>
-<p>​            把运行期异常提升到了编译器异常</p>
-</li>
-<li><p>坏处：泛型是什么数据类型，就只能有什么类型的数据</p>
-</li>
-</ul>
-<h3 id="默认Object好处和坏处"><a href="#默认Object好处和坏处" class="headerlink" title="默认Object好处和坏处"></a>默认Object好处和坏处</h3><ul>
-<li>好处：可以接受任何数据类型</li>
-<li>坏处：不安全 容易发生异常</li>
-</ul>
-<hr>
-<h2 id="泛型的应用场合"><a href="#泛型的应用场合" class="headerlink" title="泛型的应用场合"></a>泛型的应用场合</h2><ol>
-<li><p>应用于类</p>
-<p>修饰符 class 类名&lt;泛型&gt;{}</p>
-<p>应用于类的泛型一般在创建对象时确定泛型的数据类型</p>
-</li>
-<li><p>应用于方法</p>
-<p>修饰符 &lt;泛型&gt; 返回值类型 方法名(泛型类型 泛型对象){}</p>
-<p>应用于方法的泛型一般在具体调用时确定泛型 </p>
-</li>
-<li><p>应用于接口</p>
-<p>修饰符 interface 接口名&lt;泛型&gt;{}</p>
-<p>应用于接口的泛型分两种情况</p>
-<p>一、在实现类的定义中确定泛型</p>
-<p>二、实现类定义也使用泛型 而在创建实现类对象时确定泛型</p>
 </li>
 </ol>
-<hr>
-<h2 id="泛型通配符"><a href="#泛型通配符" class="headerlink" title="泛型通配符"></a>泛型通配符</h2><p>通配符：&lt;?&gt;    一般泛型需要先定义后使用    而通配符不需要定义也不能应用于定义    作为参数直接使用</p>
-<p>​    <code>public static void method(ArrayList&lt;?&gt; list)&#123;    //…………    &#125;</code></p>
-<h3 id="通配符的高级使用-—–-受限泛型"><a href="#通配符的高级使用-—–-受限泛型" class="headerlink" title="通配符的高级使用   —–  受限泛型"></a>通配符的高级使用   —–  受限泛型</h3><ul>
-<li><p>泛型的上限</p>
-<p>格式：    类名    &lt; ? extends 类名 &gt;    对象名</p>
-<p>意义：    使用泛型上限后    只能接收该类及其子类    </p>
 </li>
-<li><p>泛型的下限</p>
-<p>格式：    类名    &lt; ? super 类名 &gt;    对象名</p>
-<p>意义：    使用泛型下限后    只能接收该类及其父类</p>
+<li><p>Ioc主要实现有两种方式（接口）</p>
+<ul>
+<li>BeanFactory  是Spring内部自己的实现方式</li>
+<li>ApplicationContext  主要面向开发人员的实现方式</li>
+<li>区别：BeanFactory在解析时只负责解析  在获取或者使用对象时再创建对象  而ApplicationContext 在解析时就会创建对象</li>
+</ul>
+</li>
+<li><p>解析路径的两个方法：</p>
+<ul>
+<li>FileSystemXMLApplicationContext （string）传递的字符串为硬盘的路径 例如：C://org/</li>
+<li>ClassPathXMLApplicationContext （string）传递的字符串为项目中src下的类路径 </li>
+</ul>
 </li>
 </ul>
 
@@ -916,7 +778,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E6%B3%9B%E5%9E%8B/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/28/Spring/">展开全文 >></a>
         </p>
       
 
@@ -946,27 +808,97 @@
 
 
   
-    <article id="post-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Set" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827140005902.png" alt="image-20210827140005902"></p>
-<h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827142750874.png" alt="image-20210827142750874"></p>
-<h3 id="多线程原理"><a href="#多线程原理" class="headerlink" title="多线程原理"></a>多线程原理</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827151203160.png" alt="image-20210827151203160"></p>
-<h3 id="多线程内存图"><a href="#多线程内存图" class="headerlink" title="多线程内存图"></a>多线程内存图</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210827152053463.png" alt="image-20210827152053463"></p>
-<hr>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
-<li>public Thread()</li>
-<li>public Thread(String name)</li>
-<li>public Thread(Runnable target)</li>
-<li>public Thread(Runnable target,String name)</li>
-<li>public String getName():获取线程名称</li>
-<li>public void run():执行线程中方法内容</li>
-<li>public void start():开启新线程，并且JVM调用run方法执行其中内容</li>
-<li>public static void sleep(long millis):以指定时间暂停正在执行的线程</li>
-<li>public static Thread currentThread():返回正在执行的线程的引用</li>
+        <h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><ul>
+<li>java,util.Set extends Collection（它是接口）</li>
+<li>Set 集合特点：<ul>
+<li>不允许存储重复元素</li>
+<li>没有索引 不能进行普通for循环进行遍历</li>
 </ul>
+</li>
+<li>它的实现类们<ul>
+<li>TreeSet</li>
+<li>HashSet<ul>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="HashSet-实现类"><a href="#HashSet-实现类" class="headerlink" title="HashSet 实现类"></a>HashSet 实现类</h3><ul>
+<li><p>java.util.HashSet</p>
+</li>
+<li><p>HashSet集合底层由哈希表实现 </p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>无序集合</li>
+<li>哈希表结构</li>
+<li>不同步 多线程</li>
+</ul>
+</li>
+<li><p>什么是哈希值</p>
+<blockquote>
+<p>哈希值是一个十进制的证书 由系统随机分配 就是对象的地址值 但它是逻辑地址</p>
+<p>不是实际的物理地址值</p>
+</blockquote>
+</li>
+<li><p>在Object类中有一个方法可以获取元素哈希值  hashCode()</p>
+</li>
+<li><p>hashCode源码</p>
+<p><code>public native int hashCode();</code>    native表示方法调用的是本地操作系统的方法</p>
+</li>
+<li><p>什么是哈希表？</p>
+</li>
+</ul>
+<blockquote>
+<p>哈希表底层是由数组和链表进行实现的</p>
+</blockquote>
+<p><code>Person p1 = new Person();</code></p>
+<p><code>int h1 = p1.hashCode();</code> // 342352353</p>
+<p><code>Person p2 = new Person();</code></p>
+<p><code>int h2 = p2.hashCode();</code> // 54543534</p>
+<p><code>h1 == h2 . sout ; // false</code></p>
+<p>toString()方法源码就使用到了哈希值</p>
+<p><code>return getClass().getName() + &quot;@&quot; +Integer.toHexString(hashCode());</code> </p>
+<ul>
+<li>HashSet是哈希表结构<ul>
+<li>jdk1.8 之前 哈希表 = 数组 + 链表</li>
+<li>jdk1.8 之后 哈希表 = 数组 +红黑树<ul>
+<li>加红黑树就是为了提高查询速度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p><img src="C:\Users\83480\AppData\Roaming\Typora\typora-user-images\image-20210822204330739.png" alt="image-20210822204330739"></p>
+<h3 id="LinkedHashSet集合"><a href="#LinkedHashSet集合" class="headerlink" title="LinkedHashSet集合"></a>LinkedHashSet集合</h3><ol>
+<li>java.util.LinkedHashSet extends HashSet</li>
+<li>由链表和哈希表实现（其中哈希表 = 数组 + 链表 / 红黑树 构成）它比HashSet多一个链表</li>
+<li>这个多出来的链表用于记录元素存储顺序 所以LinkedHashSet是有序的</li>
+<li>特点：<ol>
+<li>有序 存储顺序和取出顺序一致</li>
+<li>不允许有重复元素</li>
+<li>没有索引</li>
+</ol>
+</li>
+</ol>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>在不知道传递多少参数时可以使用可变参数</p>
+<p><em>可变参数底层是由数组实现的</em></p>
+<p>格式：</p>
+<p>​    修饰符    返回值类型    方法名(参数类型,,,参数名)</p>
+<p>或    修饰符    返回值类型    方法名(参数类型[] 参数名)</p>
+<p>例如 计算多个整数的和</p>
+<p><code>public static void add(int...arr)&#123;</code></p>
+<p><code>int sum = 0;</code></p>
+<p><code>for(int i:arr)&#123;</code></p>
+<p><code>sum += i;</code></p>
+<p><code>&#125;</code></p>
+<p><code>&#125;</code></p>
 
       
 
@@ -979,7 +911,116 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/28/Set/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Object类 Date类 DateFormat类 SImpleDateFormat类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h1><h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><p><code>public class Person&#123;</code></p>
+<p><code>    String name;</code>    </p>
+<p><code>int age</code></p>
+<p><code>&#125;</code></p>
+<p><code>@Override</code></p>
+<p> <code>public boolean equals(Object obj)&#123;</code></p>
+<blockquote>
+<p>判断是否自己调用自己</p>
+</blockquote>
+<p><code>if(this == obj) return true;</code></p>
+<blockquote>
+<p>判断是否为空 并且是否为同一类型（反射）</p>
+</blockquote>
+<p><code>if(this == null || this.getClass() != obj.getClass()) return false;</code></p>
+<p><code>Person person = (Person) obj;</code></p>
+<blockquote>
+<p>由于age是基本数据类型 所以用 == 即可</p>
+<p>name为引用数据类型 可能为null 使用Objects工具类的equals方法</p>
+</blockquote>
+<p><code>return this.age == obj.age &amp;&amp; Objects.equals(this.name,obj.name);</code></p>
+<p><code>&#125;</code></p>
+<hr>
+<h1 id="时间类"><a href="#时间类" class="headerlink" title="时间类"></a>时间类</h1><h3 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h3><blockquote>
+<p>java.util.Date</p>
+</blockquote>
+<ol>
+<li><p>构造方法    </p>
+<ol>
+<li><p>无参构造    Date()    获取当前系统日期和时间</p>
+<p><code>Date date = new Date();</code></p>
+<p><code>System.out.println(date);</code>    // 输出系统日期时间</p>
+</li>
+<li><p>有参构造    Date(long timeMillis) 传递毫秒值 吧毫秒值转换为date日期</p>
+</li>
+</ol>
+</li>
+<li><p>成员方法</p>
+<ol>
+<li>getTime() 获取当前时间距离时间原点的毫秒值    等同 System.currentTimeMillis();</li>
+</ol>
+</li>
+</ol>
+<h3 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h3><blockquote>
+<p>java.text.DateFormat</p>
+<p>DateFormat：abstract class    需要子类来使用它的方法</p>
+<p>其子类为 java.text.SimpleDateFormat</p>
+</blockquote>
+<ol>
+<li>成员方法    String format(Date date)</li>
+<li>成员方法    Date parse(String source)</li>
+</ol>
+<h3 id="SImpleDateFormat类"><a href="#SImpleDateFormat类" class="headerlink" title="SImpleDateFormat类"></a>SImpleDateFormat类</h3><blockquote>
+<p>继承自DateFormat</p>
+</blockquote>
+<p>构造方法：    SimpleDateFormat ( String pattern )</p>
+<p>pattern：模式            y 年 M 月 d 日 H 时 m 分 s 秒</p>
+<h3 id="Notice："><a href="#Notice：" class="headerlink" title="Notice："></a>Notice：</h3><p>在使用parse方法时，字符串转换为日期必须要与模式一致    否则会发生转换异常ParseException</p>
+<p>解决方法：</p>
+<ol>
+<li>抛出异常    继续使用    throws ParseException</li>
+<li>try catch 自行处理</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/28/Object%E7%B1%BB%20Date%E7%B1%BB%20DateFormat%E7%B1%BB%20SImpleDateFormat%E7%B1%BB/">展开全文 >></a>
         </p>
       
 
@@ -1011,7 +1052,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
